@@ -1,0 +1,35 @@
+.home{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    &__link{
+        
+        text-align: center;
+        margin: 25px;
+        font-size: 25px;
+        padding: 15px 5px;
+        background: $color_biscay;
+        border-radius: 25px;
+        color: $color_white;
+        transition: 0.5s;
+        padding: 15px 20px;
+        &:hover{
+            color: $color_rockblue;
+            opacity: 0.95;
+        }
+    }
+    @media (max-width:$screen_tablet) {
+       &__link{
+        font-size: 20px;
+       }
+
+        @media (max-width:$screen_mobile) {
+            &__link{
+                margin: 15px;
+            }
+            
+        }
+    }
+}

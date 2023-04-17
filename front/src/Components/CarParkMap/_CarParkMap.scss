@@ -1,0 +1,16 @@
+.map {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    &__place {     
+        padding: 10px;
+        background: green;
+    }
+}
+
+.nextTo{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
