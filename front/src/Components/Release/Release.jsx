@@ -16,7 +16,7 @@ function Release() {
                     <label className="book__form__group__label" htmlFor="numberPlace">Numéro du ticket</label>
                     <input className="book__form__group__input" type="number" />
                 </div>
-                <button>Libérer</button>
+                <button className="book__form__button">Libérer</button>
             </form>
         </div>
     );

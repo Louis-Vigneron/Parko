@@ -25,7 +25,7 @@ function Book() {
                     <label className="book__form__group__label" htmlFor="numberPlace">Numéro de la place</label>
                     <input className="book__form__group__input" type="number" />
                 </div>
-                <button>Réserver</button>
+                <button className="book__form__button">Réserver</button>
             </form>
         </div>
     );

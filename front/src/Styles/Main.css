@@ -116,12 +116,11 @@ body, html {
   text-align: center;
   margin: 25px;
   font-size: 25px;
-  padding: 15px 5px;
   background: #1B4866;
   border-radius: 25px;
   color: #ffffff;
   transition: 0.5s;
-  padding: 15px 20px;
+  padding: 15px 25px;
 }
 .home__link:hover {
   color: #A0B9D3;
@@ -157,6 +156,19 @@ body, html {
 }
 .book__form__group__input {
   width: 75%;
+}
+.book__form__button {
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 25px;
+  background: #1B4866;
+  border-radius: 25px;
+  color: #ffffff;
+  transition: 0.5s;
+}
+.book__form__button:hover {
+  color: #A0B9D3;
+  opacity: 0.95;
 }
 
 .map {
