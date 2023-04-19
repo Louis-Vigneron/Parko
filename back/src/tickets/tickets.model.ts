@@ -1,18 +1,22 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
+import * as mongoose from 'mongoose';
+import { User } from '../users/users.model';
+import { Car } from '../cars/cars.model';
+import { Place } from '../places/places.model';
 
 export type TicketDocument = HydratedDocument<Ticket>;
 
 @Schema()
 export class Ticket {
-  @Prop({ required: true })
-  parkingPlace: number;
+  @Prop({type: mongoose.Schema.Types.ObjectId, ref: 'Place', required: true })
+  parkingPlace: Place;
 
-  @Prop({ required: true })
-  userId: string;
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User',  required: true })
+  userId: User;
 
-  @Prop({ required: true })
-  carId: string;
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Car',required: true })
+  carId: Car;
 }
 
 export const TicketSchema = SchemaFactory.createForClass(Ticket);
