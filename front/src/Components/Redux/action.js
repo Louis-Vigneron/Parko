@@ -1,12 +1,3 @@
-/* import { STORAGE__PLACE } from "./constant";
-
-export const storePlaces = (item) => {
-    return{
-        type: STORAGE__PLACE,
-        data:item
-    }
-} */
-
 import axios from 'axios';
 
 export const FETCH_PLACES_REQUEST = 'FETCH_PLACES_REQUEST';

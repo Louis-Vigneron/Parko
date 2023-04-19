@@ -1,23 +1,8 @@
-/* import { connect } from "react-redux"
-import { GetPlaces } from "../Axios/Axios";
-import { storePlaces } from "../Redux/action";
-*/
-
-
-
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchPlaces } from '../Redux/action';
 
-/* const mapStateToProps = state => ({
-  data: state.storePlaces
-})
-
-const mapDispatchToProps = dispatch => ({
-  storePlace: data => dispatch(storePlaces(data))
-})  */
-
-const MyComponent = ({ fetchPlaces, places }) => {
+const CarParkMap = ({ fetchPlaces, places }) => {
   useEffect(() => {
     fetchPlaces();
   }, []);
@@ -41,4 +26,4 @@ const mapStateToProps = (state) => ({
   places: state.places,
 });
 
-export default connect(mapStateToProps, { fetchPlaces })(MyComponent);
+export default connect(mapStateToProps, { fetchPlaces })(CarParkMap);

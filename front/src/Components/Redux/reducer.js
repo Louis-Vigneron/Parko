@@ -1,29 +1,3 @@
-/* import { STORAGE__PLACE } from "./constant";
-
-const initialState = {
-    places: []
-};
-
-function storePlace(state = initialState, action) {
-    switch (action.type) {
-        case STORAGE__PLACE:
-            let place = {
-                item: action.data,
-            }
-            state.places.push(place);
-            return {                
-                ...state,                
-            }
-
-        default:
-            return state
-    }
-}
-
-export default storePlace */
-
-// reducers/cars.js
-
 import {
     FETCH_PLACES_REQUEST,
     FETCH_PLACES_SUCCESS,
