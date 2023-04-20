@@ -5,9 +5,9 @@ import PageError from '../Components/PageError/PageError'
 function ErrorPage() {
   return (
     <>
-      <Header/>
-      <PageError/>
-      <Footer/>
+      <Header />
+      <PageError />
+      <Footer />
     </>
   );
 }

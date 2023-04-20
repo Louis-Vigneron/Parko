@@ -16,7 +16,7 @@ export class PlacesService {
   async findOne(id: string): Promise<Place> {
     return this.placeModel.findOne({ _id: id }).exec();
   }
-  
+
   async updatePlace(id: string, available: boolean): Promise<Place> {
     const selectedPlace = await this.placeModel.findOne({ _id: id }).exec();
     selectedPlace.available = available;

@@ -4,10 +4,11 @@ import { PlacesService } from './places.service';
 import { PlacesController } from './places.controller';
 import { PlaceSchema } from './places.model';
 
-
 @Module({
-  imports: [MongooseModule.forFeature([{ name: 'Place' , schema: PlaceSchema }])],
+  imports: [
+    MongooseModule.forFeature([{ name: 'Place', schema: PlaceSchema }]),
+  ],
   providers: [PlacesService],
-  controllers: [PlacesController]
+  controllers: [PlacesController],
 })
 export class PlacesModule {}

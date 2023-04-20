@@ -34,7 +34,7 @@ const Release = ({ fetchPlaces, places }) => {
                     .then(function (response) {
                         const users = response.data
                         const userId = users.filter(a => (a.numberPlace === +releaseFormData.numberPlace && a.numberplate === releaseFormData.numberplate && a.phone === releaseFormData.phone));
-                        
+
                         if (userId[0] !== undefined) {
                             axios.delete(`http://localhost:4200/users/${userId[0]._id}`);
                             let place = +releaseFormData.numberPlace

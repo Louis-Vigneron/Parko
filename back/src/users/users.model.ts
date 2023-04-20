@@ -18,27 +18,25 @@ export class User {
   @Prop({ required: true })
   mail: string;
 
-  @Prop({ required: true, unique:true })
+  @Prop({ required: true, unique: true })
   numberplate: string;
 
   @Prop({ required: true })
   numberticket: number;
 
-  @Prop({ required: true, unique:true })
+  @Prop({ required: true, unique: true })
   numberPlace: number;
 }
-
-
 
 export const UserSchema = SchemaFactory.createForClass(User);
 UserSchema.plugin(uniqueValidator);
 
-export class CreateUserDto{
-  readonly firstName:string;
-  readonly lastName:string;
-  readonly phone:string;
-  readonly mail:string;
-  readonly numberplate:string;
-  readonly numberticket:number;
-  readonly numberPlace:number;
+export class CreateUserDto {
+  readonly firstName: string;
+  readonly lastName: string;
+  readonly phone: string;
+  readonly mail: string;
+  readonly numberplate: string;
+  readonly numberticket: number;
+  readonly numberPlace: number;
 }

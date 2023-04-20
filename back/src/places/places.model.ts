@@ -10,12 +10,11 @@ export class Place {
 
   @Prop({ required: true })
   available: boolean;
-
 }
 
 export const PlaceSchema = SchemaFactory.createForClass(Place);
 
-export class CreatePlaceDto{
-  readonly numberPlace:number;
-  readonly available:boolean;
+export class CreatePlaceDto {
+  readonly numberPlace: number;
+  readonly available: boolean;
 }

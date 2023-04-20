@@ -24,7 +24,7 @@
             align-items: center;
             justify-content: center;
             background: $color_rockblue;
-            margin: 25px;            
+            margin: 25px;
             border: 1px solid $color_black;
 
             &--false {
@@ -35,14 +35,16 @@
 
     &__legend {
         display: flex;
+
         &__text {
             margin: 25px;
             font-size: 20px;
             background: $color_bouquet;
-            padding:10px 15px;
+            padding: 10px 15px;
             border-radius: 25px;
             text-align: center;
             border: 1px solid $color_black;
+
             &--available {
                 background: $color_rockblue;
             }

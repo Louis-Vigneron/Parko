@@ -1,11 +1,12 @@
-.banner{
+.banner {
     margin: 50px 100px;
     height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    &__img{
+
+    &__img {
         object-fit: cover;
         object-position: 50% 10%;
         height: 100%;
@@ -14,7 +15,8 @@
         border-radius: 25px;
         box-shadow: 5px 5px 10px 1px $color_black;
     }
-    &__legend{
+
+    &__legend {
         width: 100%;
         font-size: 40px;
         position: relative;
@@ -23,23 +25,26 @@
         text-align: center;
         padding: 0 50px;
     }
+
     @media (max-width:$screen_tablet) {
         height: 200px;
-       &__legend{
-        font-size: 30px;
-        bottom: 125px;
-       }
+
+        &__legend {
+            font-size: 30px;
+            bottom: 125px;
+        }
 
         @media (max-width:$screen_mobile) {
             margin: 25px 25px;
             height: 150px;
-            &__legend{
-            font-size: 24px;
-            padding:0 25px;
-            bottom: 100px;
-           }
+
+            &__legend {
+                font-size: 24px;
+                padding: 0 25px;
+                bottom: 100px;
+            }
         }
-        
+
     }
 
 }

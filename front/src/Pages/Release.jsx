@@ -5,9 +5,9 @@ import Footer from '../Components/Footer/Footer'
 function ReleasePage() {
   return (
     <>
-      <Header/>
-      <Release/>
-      <Footer/>
+      <Header />
+      <Release />
+      <Footer />
     </>
   );
 }

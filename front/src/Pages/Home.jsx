@@ -7,10 +7,10 @@ import background from '../Assets/BannerHome.jpg'
 function HomePage() {
   return (
     <>
-      <Header/>
+      <Header />
       <Banner img={background} alt="Femme dans un parking" text="Libérez-vous du stress de la recherche de place grâce à Parko" />
-      <Home/>
-      <Footer/>
+      <Home />
+      <Footer />
     </>
   );
 }

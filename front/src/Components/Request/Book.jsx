@@ -47,7 +47,7 @@ const Book = ({ fetchPlaces, places }) => {
         const isValidPlate = validate(userFormData.numberplate, regexPlate);
 
         if (isValidFirstName && isValidLastName && isValidPhone && isValidMail && isValidPlate) {
-             
+
             try {
                 await axios.post("http://localhost:4200/users", userFormData);
                 let place = +userFormData.numberPlace
@@ -113,7 +113,7 @@ const Book = ({ fetchPlaces, places }) => {
                 </div>
                 <button to="/Confirmation" className="request__form__button" onClick={handleSubmit}>Réserver</button>
             </form>
-                      
+
         </div>
     );
 }

@@ -35,10 +35,10 @@ Alkatra
 
 ### Couleurs
 
-lynch : #67718E
-rockblue : #A0B9D3
-bouquet : #B988A0
-woodsmoke : #131419
-biscay : #1B4866
-white: #ffffff
-black : #000000
+lynch : #67718E  
+rockblue : #A0B9D3  
+bouquet : #B988A0  
+woodsmoke : #131419  
+biscay : #1B4866  
+white: #ffffff  
+black : #000000  

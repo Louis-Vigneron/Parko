@@ -6,7 +6,10 @@ import { PlacesModule } from './places/places.module';
 import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [MongooseModule.forRoot(process.env.DATABASE_URL), PlacesModule, UsersModule],
- 
+  imports: [
+    MongooseModule.forRoot(process.env.DATABASE_URL),
+    PlacesModule,
+    UsersModule,
+  ],
 })
 export class AppModule {}

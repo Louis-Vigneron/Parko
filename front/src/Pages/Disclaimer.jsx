@@ -5,9 +5,9 @@ import Disclaimer from '../Components/Disclaimer/Disclaimer'
 function DisclaimerPage() {
   return (
     <>
-      <Header/>
-      <Disclaimer/>
-      <Footer/>
+      <Header />
+      <Disclaimer />
+      <Footer />
     </>
   );
 }
