@@ -58,6 +58,7 @@ const Book = ({ fetchPlaces, places }) => {
 
             } catch (error) {
                 console.error("Error :", error);
+                alert("Plaque d'immatriculation déjà utilisée")
             }
         } else {
             alert('Un ou plusieurs champs ne sont pas renseignés correctement')

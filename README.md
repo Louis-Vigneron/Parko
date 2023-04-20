@@ -3,7 +3,7 @@
 ## Présentation
 
 Le projet Parko est une application de gestion de parking.
-Il a été réalisé à but éducatif et d'entraînement.
+Il a été réalisé à des fins d'entraînement professionnel, et non pas dans un contexte professionnel réel.
 
 Cette dernière permet de :
 
