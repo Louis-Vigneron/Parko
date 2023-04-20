@@ -4,11 +4,9 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { PlacesModule } from './places/places.module';
 import { UsersModule } from './users/users.module';
-import { CarsModule } from './cars/cars.module';
-import { TicketsModule } from './tickets/tickets.module';
 
 @Module({
-  imports: [MongooseModule.forRoot(process.env.DATABASE_URL), PlacesModule, UsersModule, CarsModule, TicketsModule],
+  imports: [MongooseModule.forRoot(process.env.DATABASE_URL), PlacesModule, UsersModule],
  
 })
 export class AppModule {}

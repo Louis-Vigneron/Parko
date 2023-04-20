@@ -17,8 +17,14 @@ export class User {
   @Prop({ required: true })
   mail: string;
 
-  /* @Prop()
-  ticketId?: [string];  */
+  @Prop({ required: true })
+  numberplate: string;
+
+  @Prop({ required: true })
+  numberticket: number;
+
+  @Prop({ required: true })
+  numberPlace: number;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
@@ -27,6 +33,8 @@ export class CreateUserDto{
   readonly firstName:string;
   readonly lastName:string;
   readonly phone:string;
-  readonly mail:string;/* 
-  readonly ticketId:[string]; */
+  readonly mail:string;
+  readonly numberplate:string;
+  readonly numberticket:number;
+  readonly numberPlace:number;
 }

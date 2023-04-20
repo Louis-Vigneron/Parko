@@ -6,6 +6,7 @@ const CarParkMap = ({ fetchPlaces, places }) => {
   useEffect(() => {
     fetchPlaces();
   }, []);
+
   return (
     <div className="map">
       <h2 className="map__title">Les places disponibles</h2>

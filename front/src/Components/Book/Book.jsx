@@ -4,6 +4,12 @@ import { connect } from 'react-redux';
 import { fetchPlaces } from '../Redux/action';
 import axios from "axios";
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
 const Book = ({ fetchPlaces, places }) => {
     useEffect(() => {
         fetchPlaces();
@@ -14,27 +20,24 @@ const Book = ({ fetchPlaces, places }) => {
         lastName: '',
         phone: '',
         mail: '',
-    });
-
-    const [carFormData, setCarFormData] = useState({
-        model: '',
         numberplate: '',
-    });
-
-    const [ticketFormData, setTicketFormData] = useState({
-        numberPlace: '1',
+        numberticket: getRandomInt(1,10000),
+        numberPlace: '',
+       
     });
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-     
+               console.log(userFormData)
         try {
-            const responseCar = await axios.post("http://localhost:4200/cars", carFormData);
-            console.log("Car created:", responseCar.data);
             const responseUser = await axios.post("http://localhost:4200/users", userFormData);
-            console.log("User created:", responseUser.data);     
-            const responseTicket = await axios.post("http://localhost:4200/tickets", ticketFormData);
-            console.log("Tickets created:", responseTicket.data);       
+            console.log("User created:", responseUser.data);
+            let place = +userFormData.numberPlace
+            const placeId = places.filter(p => (p.numberPlace === place)) ; 
+            const placeToUpdate = { available: false };
+            await axios.patch(`http://localhost:4200/places/${placeId[0]._id}`, placeToUpdate);
+            console.log(`Place ${placeId[0]._id} updated.`);
+
         } catch (error) {
             console.error("Error :", error);
         }
@@ -43,14 +46,7 @@ const Book = ({ fetchPlaces, places }) => {
         const { name, value } = event.target;
         setUserFormData({ ...userFormData, [name]: value });
     };
-    const handleCarChange = (event) => {
-        const { name, value } = event.target;
-        setCarFormData({ ...carFormData, [name]: value });
-    };
-    const handleTicketChange = (event) => {
-        const { name, value } = event.target;
-        setTicketFormData({ ...ticketFormData, [name]: value });
-    };
+
     return (
         <div className="book">
             <div className="book__map">
@@ -59,7 +55,7 @@ const Book = ({ fetchPlaces, places }) => {
             <form className="book__form" onSubmit={handleSubmit}>
                 <div className="book__form__group">
                     <label className="book__form__group__label" htmlFor="firstName" >Prénom</label>
-                    <input className="book__form__group__input" type="text" onChange={handleUserChange} value={userFormData.firstName} name="firstName"/>
+                    <input className="book__form__group__input" type="text" onChange={handleUserChange} value={userFormData.firstName} name="firstName" />
                 </div>
                 <div className="book__form__group">
                     <label className="book__form__group__label" htmlFor="lastName">Nom</label>
@@ -67,18 +63,23 @@ const Book = ({ fetchPlaces, places }) => {
                 </div>
                 <div className="book__form__group">
                     <label className="book__form__group__label" htmlFor="phone">Téléphone</label>
-                    <input className="book__form__group__input" type="text" onChange={handleUserChange}value={userFormData.phone}  name="phone"/>
+                    <input className="book__form__group__input" type="text" onChange={handleUserChange} value={userFormData.phone} name="phone" />
                 </div>
-             
-                <div className="book__form__group">
-                    <label className="book__form__group__label" htmlFor="mail">E-mail</label>
-                    <input className="book__form__group__input" type="mail"  onChange={handleUserChange} value={userFormData.mail} name="mail"/>
-                </div>
-               
 
                 <div className="book__form__group">
-                    <label className="book__form__group__label" htmlFor="numberPlace">Numéro de la place</label>
-                    <select name="numberPlace" onChange={handleTicketChange} >
+                    <label className="book__form__group__label" htmlFor="mail">E-mail</label>
+                    <input className="book__form__group__input" type="mail" onChange={handleUserChange} value={userFormData.mail} name="mail" />
+                </div>
+
+                <div className="book__form__group">
+                    <label className="book__form__group__label" htmlFor="numberplate">Plaque d'immatriculation</label>
+                    <input className="book__form__group__input" type="text" onChange={handleUserChange} value={userFormData.numberplate} name="numberplate" />
+                </div>
+                <div className="book__form__group">
+                    <label className="book__form__group__label" htmlFor="numberPlace">Numéro de la place</label>                    
+                    
+                    <select name="numberPlace" onChange={handleUserChange} value={userFormData.numberPlace}>
+                        <option className="book__form__group__input" type="number" >Sélectionner votre place</option>
                         {places.map((el) => {
                             if (el.available === true) {
                                 return <option className="book__form__group__input" key={el._id} type="number" >{el.numberPlace}</option>
@@ -87,22 +88,9 @@ const Book = ({ fetchPlaces, places }) => {
                         )}
                     </select>
                 </div>
-                
-            </form> 
-            <form className="book__form" onSubmit={handleSubmit}>
-                
-                <div className="book__form__group">
-                    <label className="book__form__group__label" htmlFor="model">Modèle de voiture</label>
-                    <input className="book__form__group__input" type="text" onChange={handleCarChange} name="model"/>
-                </div>
-              
-                <div className="book__form__group">
-                    <label className="book__form__group__label" htmlFor="numberplate">Plaque d'immatriculation</label>
-                    <input className="book__form__group__input" type="text" onChange={handleCarChange} name="numberplate"/>
-                </div>              
-                
+                <button className="book__form__button" onClick={handleSubmit}>Réserver</button>
             </form>
-            <button className="book__form__button" onClick={handleSubmit}>Réserver</button>
+            
         </div>
     );
 }

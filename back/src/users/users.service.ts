@@ -20,7 +20,7 @@ export class UsersService {
     return this.userModel.findOne({ _id: id }).exec();
   }
 
-  async delete(id: string) {
+  async delete(id: string) {    
     const deletedUser = await this.userModel
       .findByIdAndRemove({ _id: id })
       .exec();
