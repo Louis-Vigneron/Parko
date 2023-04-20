@@ -4,7 +4,6 @@ function ConfirmationBook() {
     var name = url.searchParams.get("name");
     var ticket = url.searchParams.get("ticket");
     var place = url.searchParams.get("place");
-    console.log(str)
     return (
         <div className="confirmation">
             <h2 className="confirmation__title">Place réservé</h2>
