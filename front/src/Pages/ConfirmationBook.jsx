@@ -1,15 +1,15 @@
 import Header from '../Components/Header/Header'
 import Footer from '../Components/Footer/Footer'
-import Book from '../Components/Request/Book'
+import Confirmation from '../Components/Confirmation/ConfirmationBook'
 
-function BookPage() {
+function ConfirmationPage() {
   return (
     <>
       <Header />
-      <Book />
+      <Confirmation />
       <Footer />
     </>
   );
 }
 
-export default BookPage;
+export default ConfirmationPage;

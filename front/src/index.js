@@ -7,7 +7,8 @@ import ErrorPage from './Pages/ErrorPage';
 import Book from './Pages/Book';
 import Release from './Pages/Release';
 import Disclaimer from './Pages/Disclaimer';
-
+import ConfirmationBook from './Pages/ConfirmationBook';
+import ConfirmationRelease from './Pages/ConfirmationRelease';
 import reportWebVitals from './reportWebVitals';
 
 import {
@@ -43,6 +44,14 @@ const router = createBrowserRouter([
   {
     path: "/Disclaimer",
     element: <Disclaimer />,
+  },
+  {
+    path: "/ConfirmationRéservation/:id?",
+    element: <ConfirmationBook />,
+  },
+  {
+    path: "/ConfirmationLibération/:id?",
+    element: <ConfirmationRelease />,
   }
 ]);
 

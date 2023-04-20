@@ -1,14 +1,15 @@
 import Header from '../Components/Header/Header'
 import Footer from '../Components/Footer/Footer'
+import Disclaimer from '../Components/Disclaimer/Disclaimer'
 
-function Disclaimer() {
+function DisclaimerPage() {
   return (
     <>
       <Header/>
-      Disclaimer
+      <Disclaimer/>
       <Footer/>
     </>
   );
 }
 
-export default Disclaimer;
+export default DisclaimerPage;

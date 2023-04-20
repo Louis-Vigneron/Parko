@@ -1,5 +1,5 @@
 import Header from '../Components/Header/Header'
-import Release from '../Components/Release/Release'
+import Release from '../Components/Request/Release'
 import Footer from '../Components/Footer/Footer'
 
 function ReleasePage() {

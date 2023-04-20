@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
+import * as uniqueValidator from 'mongoose-unique-validator';
 
 export type UserDocument = HydratedDocument<User>;
 
@@ -17,17 +18,20 @@ export class User {
   @Prop({ required: true })
   mail: string;
 
-  @Prop({ required: true })
+  @Prop({ required: true, unique:true })
   numberplate: string;
 
   @Prop({ required: true })
   numberticket: number;
 
-  @Prop({ required: true })
+  @Prop({ required: true, unique:true })
   numberPlace: number;
 }
 
+
+
 export const UserSchema = SchemaFactory.createForClass(User);
+UserSchema.plugin(uniqueValidator);
 
 export class CreateUserDto{
   readonly firstName:string;

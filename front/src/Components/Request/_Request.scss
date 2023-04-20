@@ -1,11 +1,10 @@
-.book {
+.request {
     display: flex;
     justify-content: space-between;
     margin: 0 75px;   
     &__map{
         width: 70%;
     }
-
     &__form {
         display: flex;
         flex-direction: column;
@@ -16,12 +15,14 @@
         &__group {
             width: 100%;
             display: flex;
-            justify-content: space-between;
-            &__lable{
-                width: 20%;
+            flex-direction: column;
+            margin-bottom: 25px;
+            &__label{
+                text-align: center;
+                margin-bottom: 5px;
             }
             &__input {
-                width: 60%;
+                width: 100%;
             }
         }
         &__button{        
@@ -42,12 +43,21 @@
     flex-direction: column;
     &__form{
         width: 100%;
+        &__group{
+            width: 50%;
+        }
     }
     &__map{
         width: 100%;
     }
         @media (max-width:$screen_mobile) {
            margin: 25px;
+           &__form{
+              &__group{
+            width: 75%;
+        }
+           }
+         
         }
         
     }
