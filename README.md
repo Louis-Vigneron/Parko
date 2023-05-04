@@ -13,7 +13,7 @@ Cette dernière permet de :
 
 ## Front :
 
-ReactJS/TS
+ReactJS
 
 ## Back :
 
